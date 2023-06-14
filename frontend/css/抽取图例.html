@@ -1,0 +1,44 @@
+require([
+  "esri/WebMap",
+  "esri/views/MapView",
+  "esri/widgets/Legend",
+  "dojo/domReady!"
+], function (WebMap, MapView, Legend) {
+  var webmap = new WebMap({
+    portalItem: {
+      id: "WEBMAP_ID" // 将 "WEBMAP_ID" 替换为您的 Web 地图 ID
+    }
+  });
+
+  var view = new MapView({
+    map: webmap,
+    container: "viewDiv"
+  });
+
+  view.when(function () {
+    webmap.loadAll().then(function () {
+      var legendPromises = webmap.layers.map(function (layer) {
+        return layer.fetchLegendInfos();
+      });
+
+      Promise.all(legendPromises).then(function (legendInfosArray) {
+        legendInfosArray.forEach(function (legendInfos) {
+          legendInfos.forEach(function (legendInfo) {
+            var legendImgUrl = legendInfo.src;
+            addLegendImageToDiv(legendImgUrl);
+          });
+        });
+      });
+    });
+  });
+
+  function addLegendImageToDiv(legendImgUrl) {
+    var legendDiv = document.getElementById("legendDiv");
+
+    var imgElement = document.createElement("img");
+    imgElement.src = legendImgUrl;
+    imgElement.classList.add("legend-image");
+
+    legendDiv.appendChild(imgElement);
+  }
+});
