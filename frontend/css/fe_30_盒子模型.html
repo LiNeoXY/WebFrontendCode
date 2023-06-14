@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div_test {
+      background: yellow;
+      width: 500px;
+      height: 300px;
+      text-align: justify;
+      /* 
+      内边距 设置后会增大所设置的宽高
+      1.一个值 上下左右一致
+      2.两个值 上下 左右
+      3.三个值 上 左右 下
+      4.四个值 上 右 下 左 顺时针
+      */
+      /* padding: 15px; */
+      /* padding: 20px 15px; */
+      /* padding: 20px 15px 15px; */
+      /* padding: 10px 20px 30px 40px; */
+
+      /* 
+        背景色蔓延到内边距
+        可以设置单一方向吗？  padding-方向 不支持负数
+      */
+      padding-top: 20px;
+    }
+
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      /* padding: 10px; */
+      /* 
+      边框写法 粗细 样式 颜色
+      样式：solid double-双实线 dashed-虚线 dotted-点状线
+
+      背景色也能蔓延到边框
+
+      调控
+      1.看box2
+      2.看box3
+       */
+      border: 10px dotted red;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background: blue;
+      /* 照样可以设置各个方向 */
+      border-top: 5px solid red;
+    }
+
+    .box3 {
+      width: 100px;
+      height: 100px;
+      background: green;
+
+      /*
+       border可以拆分  但是所有属性都要设置，否则会不生效无边框
+       宽度方向设置方式和padding一致
+       颜色也可类似宽度一样设置
+       样式也是
+       */
+      border-width: 10px 20px 30px;
+      border-color: yellow;
+      border-style: solid;
+    }
+
+    div{
+      width: 200px;
+      height: 200px;
+    }
+    .box4{
+      background: red;
+      border: 1px solid yellow;
+      /* 
+      marin:背景色不会蔓延
+      margin: 50px;
+      宽度设置方式一致
+       */
+    margin: 50px 30px 20px;
+    }
+
+    .box5{
+      background: green;
+      border: 1px solid blue;
+
+      /* 单独方向 */
+      /* 
+      margin-top: 10px;
+      margin可以为负 而且比较有用
+       */
+
+      margin-top: -100px;
+    }
+
+    .box6{
+      background-color: blue;
+      border: 1px dashed red;
+
+      /* 
+      之前用过的，盒子水平居中 用处很大
+      意思为 上下为0 水平自动
+       */
+      margin: 0 auto;
+    }
+
+    /* 
+    特性：
+    1.兄弟关系，两个盒子初值往外边距取最大值，水平方向为边距之和
+    2.父子关系，子盒子加的单方向magin会作用于父盒子
+    解决办法：给父盒子加padding，但是还需对父盒子进行高度计算
+            给父盒子设置边框，但仍需要进行高度调整 tranparent-透明色
+            浮动，随便给谁加都可-脱离同一平面 无需调整
+            overflow：hidden BFC 无需调整 最好的方式
+     */
+    .box7{
+      background-color: yellow;
+      border: 1px dashed red;
+
+      margin: 10px;
+      /* float: left; */
+    }
+    .box8{
+      background-color: green;
+      border: 1px dashed blue;
+
+      margin: 10px;
+      /* float: left; */
+    }
+
+    .box9{
+      width: 300px;
+      height: 300px;
+      background-color: yellow;
+      /* border: 1px dashed red; */
+
+      /* margin: 10px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+    .box10{
+      background-color: green;
+      border: 1px dashed blue;
+
+      margin-top: 100px;
+      /* float: left; */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quasi, itaque doloribus error unde dolore a illum ea, rerum explicabo autem impedit quos exercitationem expedita nihil numquam similique quaerat cupiditate.
+  </div> -->
+  <!-- <div class="box1">
+
+  </div>
+  <div class="box2">
+
+  </div>
+  <div class="box3"> -->
+
+  <!-- <div class="box4"></div>
+  <div class="box5"></div>
+  <div class="box6"></div> -->
+
+  <div class="box7"></div>
+  <div class="box8"></div>
+  <div class="box9">
+    <div class="box10"></div>
+  </div>
+  </div>
+</body>
+
+</html>

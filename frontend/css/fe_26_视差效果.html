@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      height: 750px;
+      background-color: yellow;
+      background-repeat: no-repeat;
+      background-repeat: center;
+      background-size: cover;
+      background-attachment: fixed;
+      
+      /* 复合写法  background-size只能单独用 顺序可换 注意：用此颜色不写会当做无*/
+      /* background: yellow url(../img/视差1.png) no-repeat fixed; */
+    }
+
+    .box1{
+      background-image: url(../img/视差1.png);
+    }
+    .box2{
+      background-image: url(../img/视差2.png);
+    }
+  </style>
+</head>
+<body>
+ <div class="box1"></div>
+ <div class="box2"></div>
+</body>
+</html>

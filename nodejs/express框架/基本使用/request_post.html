@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax post请求</title>
+  <style>
+    button {
+      margin: 0 auto;
+    }
+
+    .btn {}
+
+    #result {
+      width: 200px;
+      height: 100px;
+      border: double 2px blue;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <button class="btn">点击发送请求</button>
+  </center>
+
+  <div id="result"></div>
+
+  <script>
+    const result = document.getElementById('result');
+    result.addEventListener('mouseover', function () {
+      //1.创建请求对象
+      const xhr = new XMLHttpRequest();
+      //2.初始化请求参数 类型与url
+      xhr.open('POST', 'http://localhost:8000/Server');
+
+      //设置请求头 
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')//非自定义的，后面内容一般是固定写法
+      //Content-Type 用于设置请求体类型
+      // xhr.setRequestHeader('name', 'neo');//自定义请求头 需要后端加响应头
+
+      //3.发送
+      // xhr.send();
+      //post可以设置请求体 url格式 语法来说其实可以随便写，尽量是url 或者是json
+      xhr.send('a=100&b=200&c=300');
+
+      //4.事件绑定
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status <= 300) {
+            result.innerHTML = xhr.response;
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

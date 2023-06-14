@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      
+      /* white-space: normal; 默认 无效果 */
+      /* white-space: nowrap; 不换行 会撑开浏览器*/
+
+      /* 这样才能显示省略号 */
+      white-space: nowrap; 
+      overflow: hidden;
+      /* 省略号 */
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, tempora! Eius quia id voluptas voluptatem exercitationem, asperiores iusto adipisci, cupiditate tempora cum officia quos, aspernatur sit. Similique dolores veniam perspiciatis.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consectetur et earum quis nam voluptatibus quia, ab eius facilis sit recusandae. Suscipit ratione at minima sapiente repellendus delectus neque hic?
+  </div>
+  <!-- <pre>
+      预格式化文本-保留空格，tap  ，回车
+      pre 可用于展示代码
+  </pre> -->
+</body>
+</html>

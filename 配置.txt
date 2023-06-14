@@ -1,0 +1,7 @@
+VS:
+插件：
+	auto rename tag   双标签同步修改
+	view-in-browser 浏览器预览
+	live server 开发时动态浏览
+
+	htmltagwrap 快速贴标签

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drawPoint</title>
+  <style>
+
+  </style>
+  <script src="./glMatrix-0.9.6.js"></script>
+  <script>
+    //js代码
+    //入口代码
+    var webgl;
+
+    function init () {
+      initWebgl();
+      initShader();
+      initShader();
+      draw();
+    }
+    //初始化函数
+    function initWebgl () {
+      let webglDiv = document.getElementById("webglCanvas");
+      webgl = webglDiv.getContext("webggl");
+      webgl.viewPort(0, 0, webglDiv.clientWidth, webglDiv.clientHeight);
+      webgl.ortho();  
+
+    }
+    //shader初始化函数
+    function initShader () {
+
+    }
+    //数据缓冲区初始化函数
+    function initBuffer () {
+
+    }
+    //webgl的绘制函数
+    function draw () {
+
+    }
+  </script>
+</head>
+<!-- onload 当html加载出来就执行这个函数 -->
+
+<body onload="init">
+  <canvas id="webglCanvas" width="500" height="500"></canvas>
+</body>
+
+</html>

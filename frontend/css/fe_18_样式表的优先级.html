@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    外部样式写在内部上面
+
+    优先级遵循“就近原则”
+    行内>内部>外部
+    三种方式样式都有按优先级，某样式非三种都有则根据拥有成员优先级生效，某样式为一方式独有则此方式生效
+    特殊情况:important加后优先级最高
+   -->
+  <link rel="stylesheet" href="../css_ext/index_18.css">
+
+  <style>
+    div{
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div style="color:yellow">111111111</div>
+</body>
+</html>

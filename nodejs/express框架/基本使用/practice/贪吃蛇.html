@@ -1,0 +1,150 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>贪吃蛇</title>
+	<style>
+		body {
+			background-color: #333;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		canvas {
+			border: 1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<h1>贪吃蛇</h1>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script>
+		// 获取画布和上下文
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		// 定义蛇的初始位置和大小
+		var snake = {
+			x: 10,
+			y: 10,
+			size: 20,
+			dx: 0,
+			dy: 0,
+			body: []
+		};
+
+		// 定义食物的初始位置和大小
+		var food = {
+			x: 0,
+			y: 0,
+			size: 20
+		};
+
+		// 定义游戏的初始状态
+		var score = 0;
+		var gameOver = false;
+
+		// 生成随机位置的食物
+		function generateFood() {
+			food.x = Math.floor(Math.random() * (canvas.width / snake.size)) * snake.size;
+			food.y = Math.floor(Math.random() * (canvas.height / snake.size)) * snake.size;
+		}
+
+		// 绘制蛇和食物
+		function draw() {
+			// 清空画布
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			// 绘制蛇的身体
+			ctx.fillStyle = "#fff";
+			for (var i = 0; i < snake.body.length; i++) {
+				ctx.fillRect(snake.body[i].x, snake.body[i].y, snake.size, snake.size);
+			}
+
+			// 绘制食物
+			ctx.fillStyle = "#f00";
+			ctx.fillRect(food.x, food.y, food.size, food.size);
+
+			// 绘制分数
+			ctx.fillStyle = "#fff";
+			ctx.font = "20px Arial";
+			ctx.fillText("Score: " + score, 10, 30);
+		}
+
+		// 更新蛇的位置
+		function update() {
+			// 更新蛇的身体
+			snake.body.unshift({x: snake.x, y: snake.y});
+			if (snake.body.length > score + 1) {
+				snake.body.pop();
+			}
+
+			// 更新蛇的位置
+			snake.x += snake.dx;
+			snake.y += snake.dy;
+
+			// 检测是否吃到食物
+			if (snake.x == food.x && snake.y == food.y) {
+				score++;
+				generateFood();
+			}
+
+			// 检测是否撞墙或撞到自己
+			if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
+				gameOver = true;
+			}
+			for (var i = 0; i < snake.body.length; i++) {
+				if (snake.x == snake.body[i].x && snake.y == snake.body[i].y) {
+					gameOver = true;
+				}
+			}
+		}
+
+		// 处理键盘事件
+		document.addEventListener("keydown", function(event) {
+			switch (event.keyCode) {
+				case 37: // 左箭头
+					if (snake.dx != snake.size) {
+						snake.dx = -snake.size;
+						snake.dy = 0;
+					}
+					break;
+				case 38: // 上箭头
+					if (snake.dy != snake.size) {
+						snake.dx = 0;
+						snake.dy = -snake.size;
+					}
+					break;
+				case 39: // 右箭头
+					if (snake.dx != -snake.size) {
+						snake.dx = snake.size;
+						snake.dy = 0;
+					}
+					break;
+				case 40: // 下箭头
+					if (snake.dy != -snake.size) {
+						snake.dx = 0;
+						snake.dy = snake.size;
+					}
+					break;
+			}
+		});
+
+		// 游戏循环
+		function gameLoop() {
+			if (!gameOver) {
+				update();
+				draw();
+				setTimeout(gameLoop, 100);
+			} else {
+				alert("Game Over! Your score is " + score);
+			}
+		}
+
+		// 开始游戏
+		generateFood();
+		gameLoop();
+	</script>
+</body>
+</html>
+

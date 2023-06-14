@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    from 最外层的
+    action-后端提交地址
+    method 默认为get  还有POST-url看不到，较安全，后端可通过post方式取到
+
+      intput 框
+      type： 文本框-text-普通 password-密码，非明文 提交框-submit-提交按钮:提交信息到action指定的地址
+             重置框-reset-清空重置文本框内容 按钮框-button 后期很有用，如校验输入内容
+      value：如按钮文字内容
+      placeholder 框内用户提示信息
+      name 必须设置才能给后端传参数
+      [
+        input等价于button  form内重置？？？？
+      ]
+  -->
+  <form action="http://qa.supermap.com/82973?show=82973#q82973" method="POST">
+    用户信息：<input type="text" placeholder="请输入用户名，注意大小写" name="username">
+    <br>
+    <br>
+    密码：&emsp;&emsp;<input type="password" placeholder="请输入密码" name="password">
+    <br>
+    <br>
+    <!-- <input type="submit" value="登录"> -->
+    <button type="submit">登录</button>&emsp;
+    <input type="reset" value="重置">&emsp;
+    <input type="button" value=">>>>>>">
+  </form>
+</body>
+
+</html>

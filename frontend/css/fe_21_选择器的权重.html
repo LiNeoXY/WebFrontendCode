@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+    important>行内>id>class>元素
+    包含选择符为选择符之和
+    所有的对比都是同标签来比
+
+    通权重选择符则遵循就近原则，最后定义就用谁
+     */
+    #iddiv{
+      background-color: green;
+    }
+    .cdiv {
+      background-color: red;
+    }
+
+    div {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cdiv" id="iddiv">11111111111
+    <p>22222222222222222</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+npm init --yes 启动终端
+npm i express 安装express  安装需要在最外部启动终端
+node 脚本名称  启动服务，需要在脚本文件的目录打开终端
+npm install -g nodemon 安装nodemon工具，此工具可以自动重启服务端

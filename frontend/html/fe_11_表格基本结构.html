@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    tabble-tr-td结构不能动，td里面可以动
+    table
+    属性：宽度-width 高度-height 边框-border="数据"（像素）
+    width支持百分比（相对于父元素，现在是body）
+    height 支持百分比，但此时body不确定，css定高才能生效
+    align 对齐
+    bgcolor背景颜色
+    cellspacing单元格间距
+    cellpadding单元格与内容之间的空隙
+
+    tr
+    属性：
+    height 可调整
+    width 受限制
+    align 文字对齐
+    valign 垂直方向对齐 top middle bottom
+
+    td 单元格
+    属性:
+    width 会影响整列宽度
+    height 影响整行
+    bgcolor
+    align
+    valign
+   -->
+  <table border="1" width="60%"  align="center" 
+  bordercolor="red"bgcolor="blue" cellspacing="0" cellpadding="10">
+    <tr bgcolor="yellow" height="200" align="center" valign="bottom">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td bgcolor="red">5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr height="200">
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td align="right" valign="top">12</td>
+    </tr
+  </table>
+</body>
+
+</html>

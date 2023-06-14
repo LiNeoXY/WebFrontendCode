@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css_ext/index_19.css">
+  <!-- 
+    要使用css对html页面中的元素实现一对一，一对多或者多对一的控制，就需要css选择器
+    元素选择符/类型选择符 其实div{}也是一种选择器 根据元素名称选择
+
+    1.元素选择器 范围太广
+    
+    2.类选择器
+    css中前标为.+类名，元素中需要加class属性，class="类名
+    可以递归多个类来应对复杂情况
+    多个一个元素一种样式属性对应多个样式在css中会应用最后一个样式的效果[时间轴代码执行顺序]
+
+    3.id选择器 唯一选择
+    标签加属性id，全局唯一，css前标为#+id值
+
+    4.通配选择器 语法*{属性:属性值;}
+    用于清除全部元素的样式属性
+
+    5.群组选择器
+    用,合并选择
+    可以合并不同类型选择方式 如p,.ibm
+    适用于孩子选择器
+
+    6.后代选择器
+    标签下面的标签生效，空格隔开 如dic p{}
+
+    7.伪类选择器
+    a标签
+    a:link{}超链接的初始状态
+    a:visited{}超链接被访问后的状态
+    a:hover{}鼠标悬停，即鼠标划过超链接时的状态
+    a:active{}超链接被激活时的状态，集鼠标按下是超链接的状态
+
+    根据需要来使用
+   -->
+</head>
+<body>
+  <a href="https://www.baidu.com/?tn=48021271_9_hao_pg">百度</a>
+  <div id="box1">1111111111</div>
+  <div id="box2" class="ibm">2222222222</div>
+  <div class="ibm">3333333333</div>
+  <div class="ibm apple">4444444444</div>
+  <div>5555555555</div>
+  <div>6666666666</div>
+  <div>5555555555</div>
+  <div>6666666666</div>
+  <div>5555555555</div>
+  <div>
+    <p>6666666666</p>
+  </div>
+  <h1>1111111111</h1>
+  <p>11111111111</p>
+</body>
+</html>

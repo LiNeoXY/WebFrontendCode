@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1 {
+      border: 2px red;
+      background-color: aqua;
+      width: 200px;
+      height: 200px;
+      overflow: visible;
+      /*显示溢出 默认值
+      hidden  隐藏,文本裁切
+      scroll 滚动条 无溢出都显示滚动条
+      auto 自动滚动条  无溢出不显示
+      inherit 继承父元素效果
+      */
+
+
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      /* x轴溢出控制 */
+      overflow-x: auto;
+      /* y轴溢出控制 */
+      overflow-y: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem, non fugiat cupiditate magni dolores, minus,
+    minima praesentium impedit laborum voluptatem? Neque sapiente iste voluptate deserunt aspernatur, nulla recusandae
+    aliquid?
+  </div>
+
+  <div class="box">
+    <img src="../img/1.png" alt="">
+  </div>
+</body>
+
+</html>

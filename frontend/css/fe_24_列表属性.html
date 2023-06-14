@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  ul{
+    /* 
+    列表符号样式
+    disc 实心圆 默认
+    circle 空心圆
+    square 实心方块
+    nodne 不显示
+     */
+    list-style-type:circle;
+
+  }
+  li{
+    /* 边框 */
+    border: 1px solid red;
+    
+    /* 列表符位置 默认外部 */
+    list-style-position: inside;
+  }
+  .li1{
+    /* 设置图片 */
+    list-style-image: url(../img/序号1.png);
+  }
+  .li2{
+    list-style-image: url(../img/序号2.png);
+  }
+  .li3{
+    list-style-image: url(../img/序号3.png);
+  }
+
+  .box{
+    /* 以上属性合并写法 复核属性写法 而且下面的属性顺序可以随意改变 其实去掉默认符号用的最多 */
+    list-style: none url(../img/序号1.png) inside;
+  }
+</style>
+<body>
+  <ul>
+    <li class="li1">11111111</li>
+    <li class="li2">22222222</li>
+    <li class="li3">33333333</li>
+  </ul>
+  <ul class="box">
+    <li>444444444444</li>
+    <li>555555555555</li>
+    <li>666666666666</li>
+  </ul>
+</body>
+</html>

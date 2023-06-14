@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HttpServerTest</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    div {
+      margin: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label for="qualityCheck">Quality Check Service</label>
+    <input type="text" id="qualityCheck">
+    <button id="btn_check">Send Request</button>
+    <span id="response1"></span>
+  </div>
+  <div>
+    <label for="fileDownload">File Download Service</label>
+    <input type="text" id="fileDownload">
+    <button id="btn_file">Send Request</button>
+    <span id="response2"></span>
+  </div>
+  <script>
+    const btn_file = document.getElementById('btn_file');
+    const txt_file = document.getElementById('fileDownload');
+    btn_file.addEventListener('click', function () {
+      var url = 'http://192.168.179.208:8048/system/file/download?id=' + txt_file.value;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+      xhr.send();
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status <= 300) {
+            document.getElementById('response2').innerHTML = '&#10003;';
+          }
+          else {
+            document.getElementById('response2').innerHTML = '&#10007;';
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

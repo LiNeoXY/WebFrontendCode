@@ -1,0 +1,61 @@
+/* 元素选择器 范围太广 */
+div{
+  background-color: aqua;
+  color: brown;
+}
+/* 类选择器 */
+.ibm{
+  background-color: darkgoldenrod;
+}
+.apple{
+  color: black;
+}
+/* id选择器 */
+#box1{
+  background-color: green;
+}
+#box2{
+  background-color: initial;
+}
+/* 通配选择器 */
+*{
+  /* 外边距 */
+  margin: 0;
+  /* 内边距 */
+  padding: 0;
+}
+/* 群组选择器 */
+div,p,h1{
+  background-color: cornflowerblue;
+}
+div p{
+  color: darkviolet;
+}
+a{
+  text-decoration: none;
+}
+/* 伪类先后顺序固定如下，否则会混乱 */
+/* 初始 */
+a:link{
+  background-color:blue;
+  color:white;
+}
+/* 访问过 */
+a:visited{
+  background-color:blue;
+  color:white;
+}
+/* 鼠标移上去 */
+a:hover{
+  background-color: red;
+  color:white;
+}
+/* 点击激活 */
+a:active{
+  background-color: red;
+  color:white;
+}
+.home{
+  background-color: red;
+}
+

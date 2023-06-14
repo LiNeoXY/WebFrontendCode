@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 300px;
+      height: 300px;
+      /* rgba第四个参数为透明度 */
+      background-color: rgba(255, 0, 0, 0.5);
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .box3{
+      width: 300px;
+      height: 3000px;
+      background-color: yellow;
+      /* 背景图片  默认平铺效果*/
+      background-image: url(../img/gis.gif);
+      background-repeat: no-repeat;
+      
+
+      /* 
+      位置
+      1.距离左上x 距离左上y 20px 20px
+      2.百分比 百分比 用得少
+      3.left center right
+        top center bottom
+       */
+      /* background-position: 20px 20px; */
+      /* background-position: center center; */
+      /* 
+      图片大小
+      cover 等比例放大后使图片能完整覆盖盒子，但是由于等比例若二者长宽比不一致，则会裁剪一部分
+      contain  等比例放大后使图片能完全位于盒子中，但是由于等比例若二者长宽比不一致，则会相对于盒子少一部分
+       */
+      /* background-size: 300px 300px; */
+      /* background-size: 100% 100%; */
+
+      /* 
+      默认 scroll
+      相对的不是盒子 是浏览器窗口
+       */
+      background-attachment: fixed;
+      margin: 0 auto;
+      /* background-size: cover; */
+      /* margin:0 auto ; */
+    }
+
+    .box4{
+      width: 300px;
+      height: 300px;
+      background-color: yellow;
+      /* 背景图片  默认平铺效果 如果图比盒子大则会裁剪*/
+      background-image: url(../img/gis.gif);
+      /* 
+      平铺方式
+      repeat 默认
+      repeat-x 在x轴平铺
+      repeat-y 在y轴平铺
+      no-repeat 不平铺
+       */
+      background-repeat: no-repeat;
+
+      background-position: center center;
+
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="box1">
+    大家好
+    <div class="box2">
+      hello
+    </div>
+  </div> -->
+
+  <div class="box3">
+  </div>
+  <div class="box4"></div>
+</body>
+
+</html>

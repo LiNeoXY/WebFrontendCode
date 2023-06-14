@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 浮动的意义：让竖着的东西横着来 文字环绕 float-->
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+
+    .redbox {
+      /* 
+      需要横着排列都设置成left 谁先浮动谁在最左边
+      浮动 见缝插针
+      */
+      background-color: red;
+      float: left;
+    }
+
+    .greenbox {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+      /* float: left; */
+    }
+
+    .bluebox {
+      background-color: blue;
+      /* float: left; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="redbox"></div>
+  <div class="greenbox">大家好</div><!-- 浮动会将文字挤出 -->
+  <div class="bluebox"></div>
+</body>
+
+</html>
