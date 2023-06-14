@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Extract Legend from Map Service</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.20/esri/themes/light/main.css">
+  <style>
+    html,
+    body,
+    #viewDiv {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    #legendDiv {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  </style>
+  <script src="https://js.arcgis.com/4.20/"></script>
+  <script>
+    require([
+      "esri/WebMap",
+      "esri/views/MapView",
+      "esri/widgets/Legend",
+      "dojo/domReady!"
+    ], function (WebMap, MapView, Legend) {
+      var webmap = new WebMap({
+        portalItem: {
+          id: "WEBMAP_ID" // 将 "WEBMAP_ID" 替换为您的 Web 地图 ID
+        }
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: webmap
+      });
+
+      view.when(function () {
+        var legend = new Legend({
+          view: view,
+          container: "legendDiv"
+        });
+
+        view.ui.add(legend, "bottom-right");
+      });
+    });
+
+    require([
+  "esri/WebMap",
+  "esri/views/MapView",
+  "esri/widgets/Legend",
+  "dojo/domReady!"
+], function (WebMap, MapView, Legend) {
+  var webmap = new WebMap({
+    portalItem: {
+      id: "WEBMAP_ID" // 将 "WEBMAP_ID" 替换为您的 Web 地图 ID
+    }
+  });
+
+  var view = new MapView({
+    map: webmap,
+    container: "viewDiv"
+  });
+
+  view.when(function () {
+    webmap.loadAll().then(function () {
+      var legendPromises = webmap.layers.map(function (layer) {
+        return layer.fetchLegendInfos();
+      });
+
+      Promise.all(legendPromises).then(function (legendInfosArray) {
+        legendInfosArray.forEach(function (legendInfos) {
+          legendInfos.forEach(function (legendInfo) {
+            var legendImgUrl = legendInfo.src;
+            console.log("Legend Image URL:", legendImgUrl);
+            // 这里可以进一步处理图例图片的 URL
+          });
+        });
+      });
+    });
+  });
+});
+  </script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+  <div id="legendDiv"></div>
+</body>
+</html>
